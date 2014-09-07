@@ -61,15 +61,15 @@ int ContaNodiAlbero (struct NodoAlbero *Root)
    int NumNodiAlberoSx, NumNodiAlberoDx, TotaleNodi;
 
    if ( Root == NULL )
-     TotaleNodi = -1;
+     TotaleNodi = 0;
    else
    {
       /* Si contano i nodi del sottoalbero sinistro */
-      NumNodiAlberoSx = ContaNodiAlbero (Root->FiglioSx) + 1;
+      NumNodiAlberoSx = ContaNodiAlbero (Root->FiglioSx);
       /* Si contano i nodi del sottoalbero destro */
-      NumNodiAlberoDx = ContaNodiAlbero (Root->FiglioDx) + 1;
+      NumNodiAlberoDx = ContaNodiAlbero (Root->FiglioDx);
       /* Si sommano i due valori */
-      TotaleNodi = NumNodiAlberoSx + NumNodiAlberoDx;
+      TotaleNodi = NumNodiAlberoSx + NumNodiAlberoDx + 1;
    }
    return TotaleNodi;
 }
